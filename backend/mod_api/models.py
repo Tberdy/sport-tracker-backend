@@ -8,7 +8,6 @@ class User(db.Model):
     firstname = db.Column(db.String(50))
     lastname = db.Column(db.String(50))
     email = db.Column(db.String(120))
-    matches = db.relationship("Match", back_populates="user")
 
     def __init__(self, firstname, lastname, email=None):
         self.firstname = firstname
@@ -23,9 +22,7 @@ class Match(db.Model):
     name = db.Column(db.String(50))
     description = db.Column(db.String(200))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    user = db.relationship("User", back_populates="matches")
     opponent_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    opponent = db.relationship("User", back_populates="matches")
     user_time = db.Column(db.Float)
     user_distance = db.Column(db.Float)
     opponent_time = db.Column(db.Float)
