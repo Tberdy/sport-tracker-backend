@@ -30,7 +30,7 @@ class Match(db.Model):
     user_distance = db.Column(db.Float)
     opponent_time = db.Column(db.Float)
     opponent_distance = db.Column(db.Float)
-    location_name = db.Column(db.String)
+    location_name = db.Column(db.String(50))
     location_latitude = db.Column(db.Float)
     location_longitude = db.Column(db.Float)
 
