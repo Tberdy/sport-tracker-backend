@@ -175,5 +175,5 @@ class MatchListApi(Resource):
 # Register routing
 api.add_resource(UserListApi, '/users')
 api.add_resource(UserApi, '/users/<int:user_id>')
-api.add_resource(MatchListApi, '/matches')
-api.add_resource(MatchApi, '/matches/<int:match_id>')
+api.add_resource(MatchListApi, '/matchs')
+api.add_resource(MatchApi, '/matchs/<int:match_id>')
