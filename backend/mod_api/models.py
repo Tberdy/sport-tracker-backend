@@ -33,19 +33,19 @@ class Match(db.Model):
     state = db.Column(db.Integer)
 
     def __init__(
-        self, name, description, user_id, opponent_id, user_time,
-        user_distance, opponent_time, opponent_distance,
-        location_name, location_latitude, location_longitude, state
+        self, name, description, userId, opponentId, userTime,
+        userDistance, opponentTime, opponentDistance,
+        locationName, locationLatitude, locationLongitude, state
     ):
         self.name = name
         self.description = description
-        self.userId = user_id
-        self.opponentId = opponent_id
-        self.userTime = user_time
-        self.userDistance = user_distance
-        self.opponentTime = opponent_time
-        self.opponentDistance = opponent_distance
-        self.locationName = location_name
-        self.locationLatitude = location_latitude
-        self.locationLongitude = location_longitude
+        self.userId = userId
+        self.opponentId = opponentId
+        self.userTime = userTime
+        self.userDistance = userDistance
+        self.opponentTime = opponentTime
+        self.opponentDistance = opponentDistance
+        self.locationName = locationName
+        self.locationLatitude = locationLatitude
+        self.locationLongitude = locationLongitude
         self.state = state
