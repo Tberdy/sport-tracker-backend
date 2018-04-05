@@ -21,15 +21,15 @@ class Match(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50))
     description = db.Column(db.String(200))
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    opponent_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    user_time = db.Column(db.Float)
-    user_distance = db.Column(db.Float)
-    opponent_time = db.Column(db.Float)
-    opponent_distance = db.Column(db.Float)
-    location_name = db.Column(db.String(50))
-    location_latitude = db.Column(db.Float)
-    location_longitude = db.Column(db.Float)
+    userId = db.Column(db.Integer, db.ForeignKey('user.id'))
+    opponentId = db.Column(db.Integer, db.ForeignKey('user.id'))
+    userTime = db.Column(db.Float)
+    userDistance = db.Column(db.Float)
+    opponentTime = db.Column(db.Float)
+    opponentDistance = db.Column(db.Float)
+    locationName = db.Column(db.String(50))
+    locationLatitude = db.Column(db.Float)
+    locationLongitude = db.Column(db.Float)
     state = db.Column(db.Integer)
 
     def __init__(
@@ -39,13 +39,13 @@ class Match(db.Model):
     ):
         self.name = name
         self.description = description
-        self.user_id = user_id
-        self.opponent_id = opponent_id
-        self.user_time = user_time
-        self.user_distance = user_distance
-        self.opponent_time = opponent_time
-        self.opponent_distance = opponent_distance
-        self.location_name = location_name
-        self.location_latitude = location_latitude
-        self.location_longitude = location_longitude
+        self.userId = user_id
+        self.opponentId = opponent_id
+        self.userTime = user_time
+        self.userDistance = user_distance
+        self.opponentTime = opponent_time
+        self.opponentDistance = opponent_distance
+        self.locationName = location_name
+        self.locationLatitude = location_latitude
+        self.locationLongitude = location_longitude
         self.state = state

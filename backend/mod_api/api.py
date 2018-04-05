@@ -15,15 +15,15 @@ user_parser.add_argument('email', type=str)
 match_parser = reqparse.RequestParser()
 match_parser.add_argument('name', type=str)
 match_parser.add_argument('description', type=str)
-match_parser.add_argument('user_id', type=int)
-match_parser.add_argument('user_time', type=float)
-match_parser.add_argument('user_distance', type=float)
-match_parser.add_argument('opponent_id', type=int)
-match_parser.add_argument('opponent_time', type=float)
-match_parser.add_argument('opponent_distance', type=float)
-match_parser.add_argument('location_name', type=str)
-match_parser.add_argument('location_latitude', type=float)
-match_parser.add_argument('location_longitude', type=float)
+match_parser.add_argument('userId', type=int)
+match_parser.add_argument('userTime', type=float)
+match_parser.add_argument('userDistance', type=float)
+match_parser.add_argument('opponentId', type=int)
+match_parser.add_argument('opponentTime', type=float)
+match_parser.add_argument('opponentDistance', type=float)
+match_parser.add_argument('locationName', type=str)
+match_parser.add_argument('locationLatitude', type=float)
+match_parser.add_argument('locationLongitude', type=float)
 match_parser.add_argument('state', type=int)
 
 user_fields = {
@@ -37,15 +37,15 @@ match_fields = {
     'id': fields.Integer,
     'name': fields.String,
     'description': fields.String,
-    'user_id': fields.Integer,
-    'user_time': fields.Float,
-    'user_distance': fields.Float,
-    'opponent_id': fields.Integer,
-    'opponent_time': fields.Float,
-    'opponent_distance': fields.Float,
-    'location_name': fields.String,
-    'location_latitude': fields.Float,
-    'location_longitude': fields.Float,
+    'userId': fields.Integer,
+    'userTime': fields.Float,
+    'userDistance': fields.Float,
+    'opponentId': fields.Integer,
+    'opponentTime': fields.Float,
+    'opponentDistance': fields.Float,
+    'locationName': fields.String,
+    'locationLatitude': fields.Float,
+    'locationLongitude': fields.Float,
     'state': fields.Integer,
 }
 
@@ -124,15 +124,15 @@ class MatchApi(Resource):
 
         match.name = args['name']
         match.description = args['description']
-        match.user_id = args['user_id']
-        match.user_distance = args['user_distance']
-        match.user_time = args['user_time']
-        match.opponent_id = args['opponent_id']
-        match.opponent_distance = args['opponent_distance']
-        match.opponent_time = args['opponent_time']
-        match.location_name = args['location_name']
-        match.location_latitude = args['location_latitude']
-        match.location_longitude = args['location_longitude']
+        match.userId = args['userId']
+        match.userDistance = args['userDistance']
+        match.userTime = args['userTime']
+        match.opponentId = args['opponentId']
+        match.opponentDistance = args['opponentDistance']
+        match.opponentTime = args['opponentTime']
+        match.locationName = args['locationName']
+        match.locationLatitude = args['locationLatitude']
+        match.locationLongitude = args['locationLongitude']
         match.state = args['state']
 
         db.session.add(match)
@@ -155,15 +155,15 @@ class MatchListApi(Resource):
         match = Match(
             name=args['name'],
             description=args['description'],
-            user_id=args['user_id'],
-            user_time=args['user_time'],
-            user_distance=args['user_distance'],
-            opponent_id=args['opponent_id'],
-            opponent_time=args['opponent_time'],
-            opponent_distance=args['opponent_distance'],
-            location_name=args['location_name'],
-            location_latitude=args['location_latitude'],
-            location_longitude=args['location_longitude'],
+            userId=args['userId'],
+            userTime=args['userTime'],
+            userDistance=args['userDistance'],
+            opponentId=args['opponentId'],
+            opponentTime=args['opponentTime'],
+            opponentDistance=args['opponentDistance'],
+            locationName=args['locationName'],
+            locationLatitude=args['locationLatitude'],
+            locationLongitude=args['locationLongitude'],
             state=args['state'],
         )
         db.session.add(match)
