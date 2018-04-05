@@ -24,6 +24,7 @@ match_parser.add_argument('opponent_distance', type=float)
 match_parser.add_argument('location_name', type=str)
 match_parser.add_argument('location_latitude', type=float)
 match_parser.add_argument('location_longitude', type=float)
+match_parser.add_argument('state', type=int)
 
 user_fields = {
     'id': fields.Integer,
@@ -44,7 +45,8 @@ match_fields = {
     'opponent_distance': fields.Float,
     'location_name': fields.String,
     'location_latitude': fields.Float,
-    'location_longitude': fields.Float
+    'location_longitude': fields.Float,
+    'state': fields.Integer,
 }
 
 
@@ -131,6 +133,7 @@ class MatchApi(Resource):
         match.location_name = args['location_name']
         match.location_latitude = args['location_latitude']
         match.location_longitude = args['location_longitude']
+        match.state = args['state']
 
         db.session.add(match)
         db.session.commit()
@@ -160,7 +163,8 @@ class MatchListApi(Resource):
             opponent_distance=args['opponent_distance'],
             location_name=args['location_name'],
             location_latitude=args['location_latitude'],
-            location_longitude=args['location_longitude']
+            location_longitude=args['location_longitude'],
+            state=args['state'],
         )
         db.session.add(match)
         db.session.commit()

@@ -30,11 +30,12 @@ class Match(db.Model):
     location_name = db.Column(db.String(50))
     location_latitude = db.Column(db.Float)
     location_longitude = db.Column(db.Float)
+    state = db.Column(db.Integer)
 
     def __init__(
         self, name, description, user_id, opponent_id, user_time,
         user_distance, opponent_time, opponent_distance,
-        location_name, location_latitude, location_longitude
+        location_name, location_latitude, location_longitude, state
     ):
         self.name = name
         self.description = description
@@ -47,3 +48,4 @@ class Match(db.Model):
         self.location_name = location_name
         self.location_latitude = location_latitude
         self.location_longitude = location_longitude
+        self.state = state
